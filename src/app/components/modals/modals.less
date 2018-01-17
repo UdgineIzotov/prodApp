@@ -1,0 +1,227 @@
+.modals {
+  display: none;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  input[type="text"],
+  input[type="date"] {
+    padding-bottom: 10px;
+    width: 100%;
+    background: none;
+    border-bottom: 1px solid @Nepal;
+
+    .placeholder(@Nepal, 300)
+  }
+  .form-caption {
+    text-align: center;
+    .heading1;
+    color: white;
+  }
+
+  .form-section {
+    padding: 10px 0;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .form-section-caption {
+    display: block;
+    padding-bottom: 10px;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  //style radio btns on form
+  [class^="radio-container"] {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    .user-select-none;
+    color: @Nepal;
+
+    &:hover {
+      color: @Spray
+    }
+    input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      .size(16px, 16px);
+      border-radius: 50%;
+      background: @Nepal;
+    }
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    & input:checked {
+      & ~ .checkmark:after {
+        display: block;
+      }
+      & ~ .name {
+        color: white;
+      }
+    }
+    & .checkmark:after {
+      .vh-align;
+      width: 6px;
+      height: 6px;
+      border: 2px solid @Madison;
+      border-radius: 50%;
+      background: transparent;
+    }
+  }
+  .radio-container-work {
+    .style-radio-btn(@categor-work)
+  }
+  .radio-container-education {
+    .style-radio-btn(@categor-education)
+  }
+  .radio-container-hobby {
+    .style-radio-btn(@categor-hobby)
+  }
+  .radio-container-sport {
+    .style-radio-btn(@categor-sport)
+  }
+  .radio-container-other {
+    .style-radio-btn(@categor-other)
+  }
+  .radio-container-urgent {
+    .style-radio-btn(@prior-urgent);
+  }
+  .radio-container-hight {
+    .style-radio-btn(@prior-hight);
+  }
+  .radio-container-middle {
+    .style-radio-btn(@prior-middle);
+  }
+  .radio-container-low {
+    .style-radio-btn(@prior-low);
+  }
+
+  //style checkboxes on form
+  [class^="checkbox-container"] {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    .user-select-none;
+
+    & input {
+      position: absolute;
+      opacity: 0;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-image: url("../../../assets/images/empty-tomato.svg");
+      background-size: 100% 100%;
+    }
+    & input:checked ~ .checkmark {
+      background-image: url("../../../assets/images/fill tomato.svg");
+    }
+  }
+
+  .actions {
+    width: 100%;
+
+    .confirm,
+    .cansel {
+      float: right;
+      margin-left: 10px;
+    }
+    .trash {
+      float: left;
+    }
+  }
+
+  .add-task-form,
+  .edit-task-form,
+  .remove-task-form {
+    .vh-align();
+    padding: 28px;
+    width: 450px;
+    height: 600px;
+    box-sizing: border-box;
+    background-color: @Madison;
+  }
+
+  .last-warning {
+    margin: auto;
+    .message;
+    text-align: center;
+    color: @Nepal;
+  }
+
+  .form-btns-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    .form-cansel {
+      padding: 10px 25px;
+      .blue-button;
+    }
+    .form-remove {
+      margin-left: 15px;
+      padding: 10px 25px;
+      .red-button;
+    }
+  }
+
+  .responsive(@mobile, {
+    .add-task-form,
+    .edit-task-form,
+    .remove-task-form {
+      .size(100%, 100%);
+    }
+  });
+
+  .responsive-landscape(@mobile, {
+    .add-task-form,
+    .edit-task-form,
+    .remove-task-form {
+      .size(450px, 100%);
+
+      padding: 10px;
+    }
+
+    .form-caption {
+      margin-bottom: 0;
+    }
+
+    .form-section {
+      padding: 0 0 10px;
+    }
+
+    .form-section-caption {
+      padding-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"]{
+      padding-bottom: 5px;
+    }
+  })
+
+}

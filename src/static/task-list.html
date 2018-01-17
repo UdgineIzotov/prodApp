@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Productivity app</title>
+</head>
+<body>
+<div class="wrapper">
+  <header class="">
+    <h1 class="logo">
+      <a href="">
+        <img src="/Logo.svg" alt="" width="100%" height="100%">
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a class="add-items" href="#" title="Add items">
+            <span class="icon--add"></span>
+          </a>
+        </li>
+        <li>
+          <a class="delete-items selected" href="#" title="Delete item">
+            <span class="icon--trash "></span>
+          </a>
+        </li>
+        <li>
+          <a class="global-list-nav" href="#" title="To global list">
+            <span class="icon--list"></span>
+          </a>
+        </li>
+        <li>
+          <a class="statistics-nav" href="#" title="To Statistics">
+            <span class="icon--statistics"></span>
+          </a>
+        </li>
+        <li>
+          <a class="settings-nav" href="#" title="To settings">
+            <span class="icon--settings"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="task-page">
+    <h1 class="main-caption">Daily Task.js List +</h1>
+    <nav class="pages-nav">
+      <ul>
+        <li><a href="#" title="Tasks to do">To Do</a></li>
+        <li><a href="#" title="Done tasks">Done</a></li>
+      </ul>
+    </nav>
+    <div class="main-content add-first-task none">
+      <div class="pomadoro-img"></div>
+
+      <div class="message">Add your first task</div>
+    </div>
+    <div class="main-content first-enterance none">
+      <div class="pomadoro-img">
+        <img src="/tomato_settings.svg" alt="" width="100%" height="100%">
+      </div>
+
+      <div class="message">
+        As you visited our site for a first time you can check
+        and customize your default application settings
+      </div>
+      <div class="task-nav-buttons">
+        <button class="skip">Skip</button>
+        <button class="to-settings">Go to Settings</button>
+
+      </div>
+
+    </div>
+    <div class="main-content no-any-tasks none">
+      <nav class="pages-nav">
+        <ul>
+          <li><a class="selected" href="">To Do</a></li>
+          <li><a href="">Done</a></li>
+        </ul>
+      </nav>
+      <div class="pomadoro-img"></div>
+      <div class="message">
+        You don't have any tasks left.<br>
+        Add new task to stay productive.
+      </div>
+
+    </div>
+    <div class="main-content daily-task-list none">
+      <ul class="tasks">
+        <li class="hobby-task priority-urgent">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href="#" title="Edit item"><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+
+        </li>
+        <li class="sport-task priority-hight">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+
+          <div class="actions">
+            <div class="edit">
+              <a href="#" title="Edit item"><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span></div>
+          </div>
+        </li>
+        <li class="work-task priority-hight">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href="#" title="Edit item"><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="education-task priority-middle">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href="#" title="Edit item"><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="other-task priority-low">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+
+          <div class="actions">
+            <div class="edit">
+              <a href="#" title="Edit item">
+                <span class="icon--edit"></span>
+              </a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <a class="to-global-list" href="#" title="To global list">Global list ></a>
+    </div>
+    <div class="main-content global-list none">
+      <div class="daily-tasks">
+        <ul class="tasks">
+          <li class="hobby-task priority-urgent">
+            <div class="category-strip"></div>
+            <div class="date">TODAY</div>
+            <div class="text">
+              <h3 class="caption">Lorem ipsum dolor sit.</h3>
+              <h6 class="note">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+              </h6>
+            </div>
+            <div class="actions">
+              <div class="edit">
+                <a href=""><span class="icon--edit"></span></a>
+              </div>
+              <div class="timer">
+                <span class="icon--tomato"></span>
+                <span class="count">3</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="categories-tasks">
+        <nav class="categories-nav">
+          <ul>
+            <li><a class="selected" href="#" title="all priorities">all</a></li>
+            <li><a href="#" title="urgent priority">Urgent</a></li>
+            <li><a href="#" title="hight priority">Hight</a></li>
+            <li><a href="#" title="middle priority">Middle</a></li>
+            <li><a href="#" title="low priority">Low</a></li>
+          </ul>
+        </nav>
+
+        <div class="category-task-list work-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            WORK
+          </div>
+          <ul class="tasks">
+            <li class="work-task priority-hight">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#" title="up the task"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#" title="edit the task"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-task priority-middle">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#" title="up the task"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#" title="edit the task"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="category-task-list education-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            EDUCATION
+          </div>
+          <ul class="tasks">
+            <li class="education-task priority-low">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#" title="up the task"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#" title="edit the task"><span class="icon--edit"></span></a>
+                </div>
+
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-content drag-first-task none">
+      <div class="drag-message">
+        <div class="msg">
+          Task.js added,<br> drag it to the top 5 in daily task lisk
+        </div>
+        <a class="drag-arrow" href="#" title="drag to the top">
+          <span class="icon--arrow_circle "></span>
+        </a>
+      </div>
+      <div class="categories-tasks">
+        <nav class="categories-nav">
+          <ul>
+            <li><a class="selected" href="#" title="all priorities">all</a></li>
+            <li><a href="#" title="urgent priority">Urgent</a></li>
+            <li><a href="#" title="hight priority">Hight</a></li>
+            <li><a href="#" title="middle priority">Middle</a></li>
+            <li><a href="#" title="low priority">Low</a></li>
+          </ul>
+        </nav>
+        <div class="category-task-list work-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            WORK
+          </div>
+          <ul class="tasks">
+            <li class="work-task priority-hight">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-task priority-middle">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="category-task-list education-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            EDUCATION
+          </div>
+          <ul class="tasks">
+            <li class="education-task priority-low">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-content daily-task-list-done none">
+
+      <ul class="tasks">
+        <li class="hobby-task priority-urgent done">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+
+        </li>
+        <li class="sport-task priority-hight done">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span></div>
+          </div>
+        </li>
+        <li class="work-task priority-hight done">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="education-task priority-middle done">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="other-task priority-low done">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+
+          <div class="actions">
+            <div class="edit">
+              <a href="">
+                <span class="icon--edit"></span>
+              </a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <a class="to-global-list" href="#" title="To global list">Global list ></a>
+
+    </div>
+    <div class="main-content task-list-exelent-msg none">
+      <div class="exelent-message">
+        Excellent,<br> all daily tasks done! :)
+      </div>
+      <div class="categories-tasks">
+        <nav class="categories-nav">
+          <ul>
+            <li><a class="selected" href="#" title="all priorities">all</a></li>
+            <li><a href="#" title="urgent priority">Urgent</a></li>
+            <li><a href="#" title="hight priority">Hight</a></li>
+            <li><a href="#" title="middle priority">Middle</a></li>
+            <li><a href="#" title="low priority">Low</a></li>
+          </ul>
+        </nav>
+        <div class="category-task-list work-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            WORK
+          </div>
+          <ul class="tasks">
+            <li class="work-task priority-hight">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-task priority-middle">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="category-task-list education-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            EDUCATION
+          </div>
+          <ul class="tasks">
+            <li class="education-task priority-low">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-content remove-item daily-task-list-remove-list none">
+
+      <ul class="tasks">
+        <li class="hobby-task priority-urgent">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+
+        </li>
+        <li class="sport-task priority-hight active">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span></div>
+          </div>
+        </li>
+        <li class="work-task priority-hight">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="education-task priority-middle active">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+          <div class="actions">
+            <div class="edit">
+              <a href=""><span class="icon--edit"></span></a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="other-task priority-low">
+          <div class="category-strip"></div>
+          <div class="date">TODAY</div>
+          <div class="text">
+            <h3 class="caption">Lorem ipsum dolor sit.</h3>
+            <h6 class="note">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+            </h6>
+          </div>
+
+          <div class="actions">
+            <div class="edit">
+              <a href="">
+                <span class="icon--edit"></span>
+              </a>
+            </div>
+            <div class="timer">
+              <span class="icon--tomato"></span>
+              <span class="count">3</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <a class="to-global-list">Global list ></a>
+
+    </div>
+    <div class="main-content remove-item global-list-remove-items">
+      <div class="daily-tasks">
+
+        <ul class="tasks">
+          <li class="hobby-task priority-urgent active">
+            <div class="category-strip"></div>
+            <div class="date">TODAY</div>
+            <div class="text">
+              <h3 class="caption">Lorem ipsum dolor sit.</h3>
+              <h6 class="note">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+              </h6>
+            </div>
+            <div class="actions">
+              <div class="edit">
+                <a href=""><span class="icon--edit"></span></a>
+              </div>
+              <div class="timer">
+                <span class="icon--tomato"></span>
+                <span class="count">3</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="categories-tasks">
+        <nav class="categories-nav">
+          <ul>
+            <li><a class="selected" href="#" title="all priorities">all</a></li>
+            <li><a href="#" title="urgent priority">Urgent</a></li>
+            <li><a href="#" title="hight priority">Hight</a></li>
+            <li><a href="#" title="middle priority">Middle</a></li>
+            <li><a href="#" title="low priority">Low</a></li>
+          </ul>
+        </nav>
+
+        <div class="category-task-list work-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            WORK
+          </div>
+          <ul class="tasks">
+            <li class="work-task priority-hight active-remove">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-task priority-middle">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="category-task-list education-task-list">
+          <div class="list-caption">
+            <div class="list-caption-shape"></div>
+            EDUCATION
+          </div>
+          <ul class="tasks">
+            <li class="education-task priority-low active-remove">
+              <div class="category-strip"></div>
+              <div class="date">
+                <div class="day">23</div>
+                <div class="month">MAY</div>
+              </div>
+              <div class="text">
+                <h3 class="caption">Lorem ipsum dolor sit.</h3>
+                <h6 class="note">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, incidunt.
+                </h6>
+              </div>
+              <div class="actions">
+                <div class="up-and-edit-wrap">
+                  <a class="up" href="#"><span class="icon--arrows-up"></span></a>
+                  <a class="edit" href="#"><span class="icon--edit"></span></a>
+                </div>
+
+                <div class="timer">
+                  <span class="icon--tomato"></span>
+                  <span class="count">3</span>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </main>
+  <div class="modals none">
+    <form class="add-task-form none" action="">
+      <div class="actions">
+        <button class="text-btn trash">
+          <span class="icon--trash"></span>
+        </button>
+        <button class="text-btn confirm" type="submit">
+          <span class="icon--check"></span>
+        </button>
+        <button class="text-btn cansel">
+          <span class="icon--close"></span>
+        </button>
+
+      </div>
+      <h3 class="form-caption">Add task</h3>
+      <div class="form-section">
+        <label class="form-section-caption" for="title">title</label>
+        <input type="text" id="title" placeholder="Add title here">
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption" for="description">DESCRIPTION</label>
+        <input type="text" id="description" placeholder="Add description here">
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption">CATEGORY</label>
+
+        <label class="radio-container-work" for="work">
+          <input type="radio" name="category" value="work" id="work">
+          <span class="name">Work</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-education" for="education">
+          <input type="radio" name="category" value="education" id="education">
+          <span class="name">Education</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-hobby" for="hobby">
+          <input type="radio" name="category" value="hobby" id="hobby">
+          <span class="name">Hobby</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-sport" for="sport">
+          <input type="radio" name="category" value="sport" id="sport">
+          <span class="name">Sport</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-other" for="other">
+          <input type="radio" name="category" value="other" id="other">
+          <span class="name">Other</span>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption" for="deadline">DEADLINE</label>
+        <input type="text" id="deadline" placeholder="May 23, 2016">
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption">ESTIMATION</label>
+        <label class="checkbox-container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption">PRIORITY</label>
+        <label class="radio-container-urgent" for="urgent">
+          <input type="radio" name="priority" value="urgent" id="urgent">
+          <span class="name">Urgent</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-hight" for="hight">
+          <input type="radio" name="priority" value="hight" id="hight">
+          <span class="name">High</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-middle" for="middle">
+          <input type="radio" name="priority" value="middle" id="middle">
+          <span class="name">Middle</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-low" for="low">
+          <input type="radio" name="priority" value="low" id="low">
+          <span class="name">Low</span>
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+
+
+    </form>
+    <form class="edit-task-form " action="">
+      <div class="actions">
+        <button class="text-btn trash">
+          <span class="icon--trash"></span>
+        </button>
+        <button class="text-btn confirm" type="submit">
+          <span class="icon--check"></span>
+        </button>
+        <button class="text-btn cansel">
+          <span class="icon--close"></span>
+        </button>
+      </div>
+      <h3 class="form-caption">Edit task</h3>
+      <div class="form-section">
+        <label class="form-section-caption" for="title">title</label>
+        <input type="text" id="title" placeholder="Add title here">
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption" for="description">DESCRIPTION</label>
+        <input type="text" id="description" placeholder="Add description here">
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption">CATEGORY</label>
+
+        <label class="radio-container-work" for="work">
+          <input type="radio" name="category" value="work" id="work">
+          <span class="name">Work</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-education" for="education">
+          <input type="radio" name="category" value="education" id="education">
+          <span class="name">Education</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-hobby" for="hobby">
+          <input type="radio" name="category" value="hobby" id="hobby">
+          <span class="name">Hobby</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-sport" for="sport">
+          <input type="radio" name="category" value="sport" id="sport">
+          <span class="name">Sport</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-other" for="other">
+          <input type="radio" name="category" value="other" id="other">
+          <span class="name">Other</span>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption" for="deadline">DEADLINE</label>
+        <input type="text" id="deadline" placeholder="May 23, 2016">
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption">ESTIMATION</label>
+        <label class="checkbox-container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+      <div class="form-section">
+        <label class="form-section-caption">PRIORITY</label>
+        <label class="radio-container-urgent" for="urgent">
+          <input type="radio" name="priority" value="urgent" id="urgent">
+          <span class="name">Urgent</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-hight" for="hight">
+          <input type="radio" name="priority" value="hight" id="hight">
+          <span class="name">High</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-middle" for="middle">
+          <input type="radio" name="priority" value="middle" id="middle">
+          <span class="name">Middle</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container-low" for="low">
+          <input type="radio" name="priority" value="low" id="low">
+          <span class="name">Low</span>
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+    </form>
+    <form class="remove-task-form none" action="">
+      <div class="actions">
+        <button class="text-btn cansel">
+          <span class="icon--close"></span>
+        </button>
+
+      </div>
+      <h3 class="form-caption">Remove Task.js</h3>
+      <div class="last-warning">
+        Are you sure you want to remove selected task(s)?
+      </div>
+
+      <div class="form-btns-container">
+        <button class="form-cansel">Cansel</button>
+        <button class="form-remove">Remove</button>
+      </div>
+
+
+    </form>
+  </div>
+  <div class="notifications none">
+    <div class="notify-success ">
+      <div class="emoji-notify"></div>
+      <div class="notify-msg">
+        Task.js was successfully created!
+      </div>
+      <div class="hide-btn">
+        <span class="icon--close"></span>
+      </div>
+    </div>
+    <div class="notify-error none">
+      <div class="emoji-notify"></div>
+      <div class="notify-msg">
+        Ups! An error has ocured!
+      </div>
+      <div class="hide-btn">
+        <span class="icon--close"></span>
+      </div>
+    </div>
+    <div class="notify-warning none">
+      <div class="emoji-notify"></div>
+      <div class="notify-msg">
+        This is just warning notification message!
+      </div>
+      <div class="hide-btn">
+        <span class="icon--close"></span>
+      </div>
+    </div>
+    <div class="notify-info none">
+      <div class="emoji-notify"></div>
+      <div class="notify-msg">
+        This is just info notification message!
+      </div>
+      <div class="hide-btn">
+        <span class="icon--close"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="/bundle.js"></script>
+
+</body>
+</html>

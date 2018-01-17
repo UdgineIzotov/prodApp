@@ -1,0 +1,165 @@
+html {
+  background: @Madison;
+}
+
+.wrapper {
+  min-width: 1260px;
+}
+
+.hide {
+  display: none !important;
+}
+
+main {
+  position: relative;
+  text-align: center;
+
+  .main-caption {
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;;
+    color: white;
+
+    .add-items-caption {
+      color: white;
+      margin-left: 5px;
+      font-size: 24px;
+    }
+  }
+  .sub-caption {
+    .subtitle;
+    color: @Nepal;
+  }
+  .pages-nav {
+    position: absolute;
+    padding-right: 6.6%;
+    right: 0;
+    top: 46px;
+    .caption;
+
+    li {
+      margin-left: 5px;
+    }
+    li:first-child {
+      &:after {
+        margin-left: 7px;
+        display: inline;
+        content: "|";
+        color: @Nepal;
+      }
+    }
+  }
+}
+
+.selected {
+  color: white !important;
+}
+
+a {
+  text-decoration: none;
+  color: @Nepal;
+
+  &:hover, &:focus, &:active {
+    color: @Spray;
+  }
+}
+
+.text-btn {
+  color: @Nepal;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover, &:focus, &:active {
+    color: @Spray;
+  }
+}
+
+input[type="text"],
+input[type="date"],
+button {
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  font-weight: bold;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.link-btn {
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+//for hiding blocks
+.none {
+  display: none !important;
+}
+
+.hide {
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+nav {
+  ul {
+    display: block;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  background: @Nepal;
+  .caption;
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -4px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    background: @Nepal;
+    border-radius: 2px;
+
+    transform: rotate(45deg);
+  }
+
+
+}
+
+.responsive(@tablet, {
+  .wrapper {
+    min-width: @mobile + 1px;
+  }
+});
+
+.responsive(@mobile, {
+  .wrapper {
+    min-width: 360px;
+  }
+
+  .main-caption {
+    position: fixed;
+    padding-top: 52px;
+    padding-left: 6.6%;
+    top: 0;
+    left: 0;
+  }
+});
+
+

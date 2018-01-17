@@ -1,0 +1,23 @@
+<ul class="tasks">
+  {{#each tasks}}
+    <li class="task-item {{category}}-task priority-{{priority}} {{#if isDone}}done{{/if}}" data-id="{{id}}">
+      <div class="category-strip"></div>
+      <div class="date">TODAY</div>
+      <div class="text">
+        <h3 class="caption">{{title}}</h3>
+        <h6 class="note">
+          {{description}}
+        </h6>
+      </div>
+      <div class="actions">
+        <div class="edit" data-id="{{id}}">
+          <a href="" title="Edit task"><span class="icon--edit" ></span></a>
+        </div>
+        <div class="timer" data-id="{{id}}" title="To timer">
+          <span class="icon--tomato"></span>
+          <span class="count">{{estimationTotal}}</span>
+        </div>
+      </div>
+    </li>
+  {{/each}}
+</ul>

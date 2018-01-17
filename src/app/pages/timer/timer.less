@@ -1,0 +1,122 @@
+@import "timer-progressbar";
+
+.timer-page {
+  @size: 270px;
+
+  .task-note {
+    color: white;
+  }
+  .tomatoes {
+    margin: auto;
+    @tomatoe-size: 25px;
+
+    .add-tomato {
+      display: inline-block;
+      font-size: @tomatoe-size;
+      color: @Nepal;
+    }
+
+    .tomato {
+      display: inline-block;
+      margin-right: @tomatoe-size/2;
+      .size(@tomatoe-size, @tomatoe-size);
+      background-image: url("/empty-tomato.svg");
+
+      &.fail {
+        background-image: url("/tomato-failed.svg");
+      }
+      &.fill {
+        background-image: url("/fill tomato.svg");
+      }
+    }
+  }
+
+  .timer-container {
+    margin: 20px auto;
+    .size(@size+30px, @size+30px);
+    border-width:  4px;
+    border-style: solid;
+    border-radius: 50%;
+
+    &.work{
+      border-color: @categor-work;
+    }
+    &.education{
+      border-color:  @categor-education;
+    }
+    &.sport{
+      border-color:  @categor-sport;
+    }
+    &.hobby{
+      border-color:  @categor-hobby;
+    }
+    &.other{
+      border-color:  @categor-other;
+    }
+
+  }
+
+
+  .timer-msg {
+    .vh-align;
+    .caption;
+
+    width: 100%;
+    font-size: 24px;
+    color: white;
+
+    .time {
+     font-size: 48px;
+    }
+
+
+  }
+
+  .timer-nav-btns {
+    margin-top: 50px;
+    .start {
+      padding: 10px 35px;
+      .green-button();
+    }
+    .start-pomoodora {
+      padding: 10px 25px;
+      .green-button();
+    }
+    .finish-task {
+      margin-left: 15px;
+      padding: 10px 35px;
+      .blue-button();
+    }
+
+    .fail-pomodora {
+      padding: 10px 25px;
+      .red-button();
+    }
+
+    .finish-pomodora {
+      margin-left: 15px;
+      padding: 10px 25px;
+      .green-button();
+    }
+
+    .global-list-left-btn {
+      display: inline-block;
+      position: fixed;
+      top: 50vh;
+      left: 36px;
+      font-size: 36px;
+      font-weight: bold;
+
+    }
+    .to-report-right-btn {
+      display: inline-block;
+      position: fixed;
+      top: 50vh;
+      right: 36px;
+      font-size: 36px;
+      font-weight: bold;
+
+    }
+  }
+}
+

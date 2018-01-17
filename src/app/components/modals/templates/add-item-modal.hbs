@@ -1,0 +1,102 @@
+<div class="add-task-form" action="">
+<div class="add-task-form" action="">
+  <div class="actions">
+    <button class="text-btn confirm" type="submit">
+      <span class="icon--check"></span>
+    </button>
+    <button class="text-btn cansel">
+      <span class="icon--close"></span>
+    </button>
+
+  </div>
+  <h3 class="form-caption">Add task</h3>
+  <div class="form-section">
+    <label class="form-section-caption" for="title">title</label>
+    <input type="text" id="title" placeholder="Add title here">
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption" for="description">DESCRIPTION</label>
+    <input type="text" id="description" placeholder="Add description here">
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption">CATEGORY</label>
+
+    <label class="radio-container-work" for="work">
+      <input type="radio" name="category" value="work" id="work">
+      <span class="name">Work</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-education" for="education">
+      <input type="radio" name="category" value="education" id="education">
+      <span class="name">Education</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-hobby" for="hobby">
+      <input type="radio" name="category" value="hobby" id="hobby">
+      <span class="name">Hobby</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-sport" for="sport">
+      <input type="radio" name="category" value="sport" id="sport">
+      <span class="name">Sport</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-other" for="other">
+      <input type="radio" name="category" value="other" id="other">
+      <span class="name">Other</span>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption" for="deadline">DEADLINE</label>
+    <input type="text" id="deadline" value="{{#nowDate}}{{/nowDate}}">
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption">ESTIMATION</label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation">
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption">PRIORITY</label>
+    <label class="radio-container-urgent" for="urgent">
+      <input type="radio" name="priority" value="urgent" id="urgent">
+      <span class="name">Urgent</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-hight" for="hight">
+      <input type="radio" name="priority" value="hight" id="hight">
+      <span class="name">High</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-middle" for="middle">
+      <input type="radio" name="priority" value="middle" id="middle">
+      <span class="name">Middle</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-low" for="low">
+      <input type="radio" name="priority" value="low" id="low">
+      <span class="name">Low</span>
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+</div>

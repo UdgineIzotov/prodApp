@@ -1,0 +1,36 @@
+<h1 class="main-caption heading1">{{task.title}}</h1>
+<h2 class="task-note subtitle">
+  {{task.description}}
+</h2>
+<div class="timer--start">
+    <div class="tomatoes">
+        <div class="estimation-container"></div>
+        <a class="add-tomato" href="#" title="add-tomato">
+            <span class=" icon--add"></span>
+        </a>
+    </div>
+    <div class="timer-container {{task.category}}">
+        <div class="radial-timer s-animate">
+            <div class="radial-timer-half">
+                <div class="after"></div>
+            </div>
+            <div class="radial-timer-half">
+                <div class="after"></div>
+            </div>
+            <div class="radial-timer-face">
+                <div class="radial-timer-message">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="timer-nav-btns">
+        <div class="timer-control-btns">
+            <button class="start">Start</button>
+        </div>
+        <a class="global-list-left-btn" href="#task-list" title="To global list">
+            <span class="icon--arrow-left"></span>
+        </a>
+    </div>
+</div>

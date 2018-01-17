@@ -1,0 +1,61 @@
+.ui-datepicker {
+  background: @Madison;
+  box-shadow: 0 0 1px 1px white;
+
+  &-header {
+    background: @Nepal;
+    font-family: Roboto;
+    color: white;
+
+  }
+
+ &-prev:before {
+   position: absolute;
+   font-family: 'icomoon' !important;
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   content: "\e909";
+   color: white;
+   position: absolute;
+   top: 50%;
+   left: 25%;
+   transform:  translate(0, -50%) scale(-1, 1);
+ }
+ &-next:before {
+   position: absolute;
+   font-family: 'icomoon' !important;
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   content: "\e909";
+   color: white;
+   .vh-align;
+ }
+
+  &-calendar {
+    border-collapse: separate !important;
+    font-family: Roboto;
+
+    th {
+
+      color:white !important;
+    }
+
+    td {
+      border: 1px solid white !important;
+    }
+
+    &-other-month {
+      color: @Dark-Gray !important;
+    }
+  }
+}

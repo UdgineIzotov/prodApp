@@ -1,0 +1,107 @@
+@background: @Madison;
+
+.radial-timer {
+  // CONFIG
+  @size: 280px;
+  @thickness: 30px;
+  @duration: 10s;
+  @color: @Nepal;
+
+  overflow: hidden;
+  height: @size;
+  width: @size;
+  position: relative;
+  margin: 10px auto;
+  background: @background;
+  border-radius: 50%;
+
+  &-half {
+    height: @size;
+    width: @size/2;
+    border-radius: @size/2 0 0 @size/2;
+    background: @color;
+    position: absolute;
+    &:nth-of-type(2) {
+      z-index: 20;
+      transform-origin: center right;
+      transform: rotate(180deg);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: @thickness;
+      left: @thickness;
+      height: @size - 2*@thickness;
+      width: (@size - 2*@thickness)/2;
+      border-radius: (@size - @thickness)/2 0 0 (@size - @thickness)/2;
+      background: @background;
+    }
+    .after {
+      content: "";
+      position: absolute;
+      background: @background;
+      height: @size*2;
+      width: @size*1.5;
+      left: -@size;
+      top: -@size/2;
+      transform-origin: center right;
+    }
+  }
+
+  &.s-animate {
+    transform-origin: center right;
+
+    .radial-timer-half:nth-of-type(1) .after {
+      animation-play-state: paused !important;
+      animation: rotateLeftMask @duration 1 linear;
+      animation-fill-mode: forwards;
+    }
+    .radial-timer-half:nth-of-type(2) .after {
+      animation-play-state: paused !important;
+      animation: rotateRightMask @duration 1 linear;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &.play {
+    .radial-timer-half:nth-of-type(1) .after {
+      animation-play-state: running !important;
+    }
+    .radial-timer-half:nth-of-type(2) .after {
+      animation-play-state: running !important;
+    }
+  }
+
+  &-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: @size - @thickness * 2;
+    height: @size - @thickness * 2;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 200;
+  }
+
+  &-message {
+    .caption;
+    .vh-align;
+    color: white;
+    font-size: 24px;
+  }
+}
+
+// Animations
+
+@keyframes rotateLeftMask {
+  0%   { transform: rotate(0deg); }
+  50%   { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
+}
+@keyframes rotateRightMask {
+  0%   { transform: rotate(0deg); }
+  50%   { transform: rotate(180deg); visibility: hidden; }
+  100% { transform: rotate(180deg); visibility: hidden; }
+}

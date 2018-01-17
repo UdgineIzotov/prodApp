@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/statistics/statistics.view.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/statistics/statistics.view.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { PubSub } from '../../Pubsub';
+import { statisticsModel } from './statistics.model';
+
+const Highcharts = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
+
+/**
+ * statistics view
+ * @memberof module:StatisticsPage
+ */
+class StatisticsView{
+
+    navTimeVal = 'Day'
+
+    navTypeVal = 'Pomodoros'
+
+    /** default options of Charts */
+    defaultChartoptions = {
+        chart: {
+            renderTo: 'Highchart',
+            backgroundColor: 'transparent',
+            type: 'column'
+        },
+        title: { text: null },
+        legend: {
+            enabled: false
+        },
+        colors: ['#F75C4C', '#FFA841', '#FDDC43', '#1ABC9C', '#9F9F9F'],
+        xAxis: {
+            labels: {
+                style: {
+                    color: 'white',
+                    textTransform: 'uppercase',
+                    fontWeight: 'bold'
+                }
+            },
+            tickColor: 'transparent'
+        },
+        yAxis: {
+            title: null,
+            labels: {
+                style: {
+                    color: 'white',
+                    fontWeight: 'bold'
+                }
+            }
+        }
+    }
+
+    /**
+     * renders page
+     */
+    render () {
+        PubSub.publish('render/header', { statistics: 'selected' });
+
+        const main = document.querySelector('main');
+        main.innerHTML = (require('./statistics.hbs'))();
+        main.className = 'reports-page';
+
+        initSortByTime();
+        initTypeGraphNav();
+
+        this.renderReport({ time: this.navTimeVal, type: this.navTypeVal });
+
+        $('body').tooltip();
+    }
+
+    /** initing sort time nav */
+    initSortByTime
+
+    /** initing sort by type nav */
+    initTypeGraphNav
+
+    /** renders chart */
+    renderReport (options) {
+        const reportData = statisticsModel.getGroupedData(options);
+
+
+        switch (options.time) {
+            case 'Day':
+                this.renderDailyReport(reportData);
+                break;
+            case 'Week':
+                this.renderWeeklyReport(reportData);
+                break;
+            case 'Month':
+                this.renderMonthlyReport(reportData);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * renders daily chart
+     * @param {object} - data for Chart
+     */
+    renderDailyReport(data) {
+        const options = StatisticsView.defaultChartoptions;
+
+        options.xAxis.categories = ['Urgent', 'Hight', 'Middle', 'Low', 'Failed'];
+
+        options.series = [{
+            name: StatisticsView.navTypeVal,
+            data: [{ y: data.urgent, color: '#F75C4C' },
+                { y: data.hight, color: '#FFA841' },
+                { y: data.middle, color: '#FDDC43' },
+                { y: data.low, color: '#1ABC9C' },
+                { y: data.failed, color: '#9F9F9F' }]
+        }];
+
+        Highcharts.chart(options);
+    }
+
+
+    /**
+     * renders weekly chart
+     * @param {object} - data for Chart
+     */
+    renderWeeklyReport(data) {
+        const options = StatisticsView.defaultChartoptions;
+
+        options.xAxis.categories = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+        options.plotOptions = {
+            column: {
+                stacking: 'normal'
+            }
+        };
+
+        options.tooltip = {
+            formatter () {
+                return `&lt;b>${this.series.name.toUpperCase()}&lt;/b>&lt;br/>${
+                    StatisticsView.navTypeVal}: ${this.y}&lt;br/>`;
+            }
+        };
+
+        options.series = [{
+            name: 'urgent',
+            data: data.urgent,
+            stack: 'succeded'
+        }, {
+            name: 'hight',
+            data: data.hight,
+            stack: 'succeded'
+        },
+        {
+            name: 'middle',
+            data: data.middle,
+            stack: 'succeded'
+        }, {
+            name: 'low',
+            data: data.low,
+            stack: 'succeded'
+        }, {
+            name: 'failed',
+            data: data.failed,
+            stack: 'failed'
+        }];
+
+        Highcharts.chart(options);
+    }
+
+    /**
+     * renders monthly chart
+     * @param {object} - data for Chart
+     */
+    renderMonthlyReport (data) {
+        const options = StatisticsView.defaultChartoptions;
+
+        const categories = Array(...{ length: 32 }).map(Number.call, Number);
+
+        options.xAxis.categories = categories.slice(1, categories.length);
+
+
+        options.plotOptions = {
+            column: {
+                stacking: 'normal'
+            }
+        };
+
+        options.tooltip = {
+            formatter () {
+                return `&lt;b>${this.series.name.toUpperCase()}&lt;/b>&lt;br/>${
+                    StatisticsView.navTypeVal}: ${this.y}&lt;br/>`;
+            }
+        };
+
+        options.series = [{
+            name: 'urgent',
+            data: data.urgent,
+            stack: 'all'
+        }, {
+            name: 'hight',
+            data: data.hight,
+            stack: 'all'
+        },
+        {
+            name: 'middle',
+            data: data.middle,
+            stack: 'all'
+        }, {
+            name: 'low',
+            data: data.low,
+            stack: 'all'
+        }, {
+            name: 'failed',
+            data: data.failed,
+            stack: 'all'
+        }];
+
+        Highcharts.chart(options);
+    }
+};
+
+function initSortByTime () {
+    const navs = document.querySelectorAll('.time-amount-nav > ul > li > a');
+
+    $('.time-amount-nav').tabs();
+
+    navs.forEach((nav) => {
+        nav.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            StatisticsView.navTimeVal = e.target.innerText;
+
+            StatisticsView.renderReport({ time: StatisticsView.navTimeVal, type: StatisticsView.navTypeVal });
+        });
+    });
+}
+
+function initTypeGraphNav () {
+    const navs = document.querySelectorAll('.type-graph-nav > ul > li > a');
+
+    $('.type-graph-nav').tabs();
+
+
+    navs.forEach((nav) => {
+        nav.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            StatisticsView.navTypeVal = e.target.innerText;
+
+            StatisticsView.renderReport({ time: StatisticsView.navTimeVal, type: StatisticsView.navTypeVal });
+        });
+    });
+}
+
+export default new StatisticsView();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-DailyTaskList.html">DailyTaskList</a></li><li><a href="module-FireDataBase.html">FireDataBase</a></li><li><a href="module-GlobalTaskList.html">GlobalTaskList</a></li><li><a href="module-HeaderComponent.html">HeaderComponent</a></li><li><a href="module-JQueryPlugins.html">JQueryPlugins</a></li><li><a href="module-Modals.html">Modals</a></li><li><a href="module-Notifications.html">Notifications</a></li><li><a href="module-PubSub.html">PubSub</a></li><li><a href="module-Router.html">Router</a></li><li><a href="module-SettingsPage.html">SettingsPage</a></li><li><a href="module-StatisticsPage.html">StatisticsPage</a></li><li><a href="module-TaskListPage.html">TaskListPage</a></li><li><a href="module-TasksModule.html">TasksModule</a></li><li><a href="module-TimerPage.html">TimerPage</a></li></ul><h3>Classes</h3><ul><li><a href="module-DailyTaskList-DailyTaskListCreator.html">DailyTaskListCreator</a></li><li><a href="module-FireDataBase-FireBase.html">FireBase</a></li><li><a href="module-GlobalTaskList-GlobalTaskList.html">GlobalTaskList</a></li><li><a href="module-HeaderComponent-HeaderViewCreator.html">HeaderViewCreator</a></li><li><a href="module-Notifications-NotificationsComponent.html">NotificationsComponent</a></li><li><a href="module-SettingsPage.SettingsView.html">SettingsView</a></li><li><a href="module-SettingsPage-SettingsModelCreator.html">SettingsModelCreator</a></li><li><a href="module-StatisticsPage.StatisticsView.html">StatisticsView</a></li><li><a href="module-StatisticsPage-StatisticsModel.html">StatisticsModel</a></li><li><a href="module-TaskListPage.TaskListView.html">TaskListView</a></li><li><a href="module-TasksModule.DataStorageInstanse.html">DataStorageInstanse</a></li><li><a href="module-TasksModule.Task.html">Task</a></li><li><a href="module-TimerPage.TimerModelCreator.html">TimerModelCreator</a></li><li><a href="module-TimerPage.TimerView.html">TimerView</a></li><li><a href="module-TimerPage-TimerControllerCreator.html">TimerControllerCreator</a></li></ul><h3>Namespaces</h3><ul><li><a href="Graph.html">Graph</a></li><li><a href="HandlebarsHelpers.html">HandlebarsHelpers</a></li><li><a href="SettingsUI.html">SettingsUI</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 15 2018 14:21:31 GMT+0200 (FLE Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

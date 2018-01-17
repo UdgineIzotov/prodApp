@@ -1,0 +1,106 @@
+.graph {
+  @graph-mark-size: 4px;
+
+  margin:  0 6.6% 30px;
+  font-family: 'Roboto', sans-serif;
+
+
+  .graph-caption {
+    color: white;
+  }
+
+  .graph-mark{
+    display: inline-block;
+    position: absolute;
+    width: @graph-mark-size;
+    height: @graph-mark-size;
+    border-radius: 50%;
+    background-color: @Spray;
+    content: '';
+  }
+
+  .graph-bar {
+    width: 100%;
+    color: @Nepal;
+    .paragraph2;
+  }
+  .upper-scale{
+    position: relative;
+    margin-bottom: 10px;
+    .clearfix();
+
+    .start{
+      position: relative;
+      float: left;
+    }
+    .one-iteration-time{
+      position: absolute;
+      transform: translate(-50%, 0);
+
+    }
+    .end{
+      position: relative;
+      float: right;
+    }
+
+    .start:before,
+    .one-iteration-time:before,
+    .end:before{
+      .graph-mark;
+    }
+    .start:before,
+    .one-iteration-time:before{
+      left: 50%;
+      bottom: -@graph-mark-size;
+      transform: translate(-50%, 0);
+    }
+    .end:before{
+      right: -@graph-mark-size / 2;
+      bottom: -@graph-mark-size;
+    }
+  }
+
+  .timeline{
+    height: 15px;
+    text-align: left;
+    font-size: 0;
+
+    .work-bar,
+    .short-break-bar,
+    .long-break-bar{
+      display: inline-block;
+      height: 100%;
+    }
+
+    .work-bar{
+      background-color: @categor-work;
+    }
+
+    .short-break-bar{
+      background-color: @categor-education;
+    }
+
+    .long-break-bar{
+      background-color: @categor-hobby;
+    }
+
+  }
+
+  .lower-scale{
+    margin: 15px 0;
+    position: relative;
+    height: 15px;
+
+    .scale-point{
+      position: absolute;
+      transform: translate(-50%, 0);
+    }
+    .scale-point:before{
+      .graph-mark;
+
+      left: 50%;
+      top: -@graph-mark-size * 1.5;
+      transform: translate(-50%, 0);
+    }
+  }
+}

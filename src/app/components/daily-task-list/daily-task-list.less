@@ -1,0 +1,129 @@
+.daily-tasks {
+  padding-top: 46px;
+  position: relative;
+}
+
+.priority-urgent {
+
+  .caption {
+    color: @prior-urgent;
+  }
+
+  .timer {
+    background-color: @prior-urgent;
+  }
+
+  .timer:active {
+    background-color: @prior-urgent-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+
+    .count {
+      display: none;
+    }
+  }
+}
+
+.priority-hight {
+
+  .caption {
+    color: @prior-hight;
+  }
+
+  .timer {
+    background-color: @prior-hight;
+  }
+
+  .timer:active {
+    background-color: @prior-hight-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+
+    .count {
+      display: none;
+    }
+  }
+}
+
+.priority-middle {
+
+  .caption {
+    color: @prior-middle;
+  }
+
+  .timer {
+    background-color: @prior-middle;
+  }
+
+  .timer:active {
+    background-color: @prior-middle-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+
+    .count {
+      display: none;
+    }
+  }
+}
+
+.priority-low {
+
+  .caption {
+    color: @prior-low;
+  }
+
+  .timer {
+    background-color: @prior-low;
+  }
+
+  .timer:active {
+    background-color: @prior-low-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+
+    .count {
+      display: none;
+    }
+  }
+}
+
+.hobby-task {
+  .category-strip {
+    background-color: @categor-hobby;
+  }
+}
+
+.sport-task {
+  .category-strip {
+    background-color: @categor-sport;
+  }
+
+}
+
+.work-task {
+  .category-strip {
+    background-color: @categor-work;
+  }
+
+}
+
+.education-task {
+  .category-strip {
+    background-color: @categor-education;
+  }
+
+}
+
+.other-task {
+  .category-strip {
+    background-color: @categor-other;
+  }
+}

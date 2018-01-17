@@ -1,0 +1,7 @@
+# /node_modules/* and /bower_components/* ignored by default
+
+# Ignore built files except build/index.js
+src/app/app.js
+src/app/test/fakerMaker.js
+# becouse of 87:9 (void needed to be ignored)
+src/app/pages/timer/timer.model.js

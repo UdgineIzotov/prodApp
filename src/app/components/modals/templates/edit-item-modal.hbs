@@ -1,0 +1,102 @@
+<div class="edit-task-form">
+  <div class="actions">
+    <button class="text-btn trash">
+      <span class="icon--trash"></span>
+    </button>
+    <button class="text-btn confirm" type="submit">
+      <span class="icon--check"></span>
+    </button>
+    <button class="text-btn cansel">
+      <span class="icon--close"></span>
+    </button>
+  </div>
+  <h3 class="form-caption">Edit task</h3>
+  <div class="form-section">
+    <label class="form-section-caption" for="title">title</label>
+    <input type="text" id="title" placeholder="Add title here" value="{{title}}">
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption" for="description">DESCRIPTION</label>
+    <input type="text" id="description" placeholder="Add description here" value="{{description}}">
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption">CATEGORY</label>
+
+    <label class="radio-container-work" for="work">
+      <input type="radio" name="category" value="work" id="work" {{#isCategory 'work' category}}{{/isCategory}}>
+      <span class="name">Work</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-education" for="education">
+      <input type="radio" name="category" value="education" id="education" {{#isCategory 'education' category}}{{/isCategory}}>
+      <span class="name">Education</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-hobby" for="hobby">
+      <input type="radio" name="category" value="hobby" id="hobby" {{#isCategory 'hobby' category}}{{/isCategory}}>
+      <span class="name">Hobby</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-sport" for="sport">
+      <input type="radio" name="category" value="sport" id="sport" {{#isCategory 'sport' category}}{{/isCategory}}>
+      <span class="name">Sport</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-other" for="other">
+      <input type="radio" name="category" value="other" id="other" {{#isCategory 'other' category}}{{/isCategory}}>
+      <span class="name">Other</span>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption" for="deadline">DEADLINE</label>
+    <input type="text" id="deadline" value="{{#dataFormat deadline}}{{/dataFormat}}">
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption">ESTIMATION</label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" {{#forEstimationCount 1 estimationTotal}}{{/forEstimationCount}}>
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" {{#forEstimationCount 2 estimationTotal}}{{/forEstimationCount}}>
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" {{#forEstimationCount 3 estimationTotal}}{{/forEstimationCount}}>
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" {{#forEstimationCount 4 estimationTotal}}{{/forEstimationCount}}>
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkbox-container">
+      <input type="checkbox" name="estimation" {{#forEstimationCount 5 estimationTotal}}{{/forEstimationCount}}>
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+  <div class="form-section">
+    <label class="form-section-caption">PRIORITY</label>
+    <label class="radio-container-urgent" for="urgent">
+      <input type="radio" name="priority" value="urgent" id="urgent"  {{#isPriority 'urgent' priority}}{{/isPriority}}>
+      <span class="name">Urgent</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-hight" for="hight">
+      <input type="radio" name="priority" value="hight" id="hight"  {{#isPriority 'hight' priority}}{{/isPriority}}>
+      <span class="name">High</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-middle" for="middle">
+      <input type="radio" name="priority" value="middle" id="middle"  {{#isPriority 'middle' priority}}{{/isPriority}}>
+      <span class="name">Middle</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-container-low" for="low">
+      <input type="radio" name="priority" value="low" id="low"  {{#isPriority 'low' priority}}{{/isPriority}}>
+      <span class="name">Low</span>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Productivity app</title>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a class="global-list-nav" href="">
+            <span class="icon--list"></span>
+          </a>
+        </li>
+        <li>
+          <a class="statistics-nav" href="">
+            <span class="icon--statistics"></span>
+          </a>
+        </li>
+        <li>
+          <a class="settings-nav selected" href="">
+            <span class="icon--settings"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="reports-page">
+    <h1 class="main-caption heading1">Reports</h1>
+    <nav class="time-amount-nav">
+      <ul>
+        <li><a class="caption selected" href="">Day</a></li>
+        <li><a class="caption" href=" ">Week</a></li>
+        <li><a class="caption" href=" ">Month</a></li>
+      </ul>
+    </nav>
+    <div class="report-graph">
+    </div>
+    <div class="graph-description">
+      <span class="urgent-desc">Urgent</span>
+      <span class="hight-desc">High</span>
+      <span class="middle-desc">Middle</span>
+      <span class="low-desc">Low</span>
+      <span class="failed-desc">Failed</span>
+    </div>
+    <nav class="type-graph-nav">
+      <ul>
+        <li><a class="caption selected" href="#">Pomodoros</a></li>
+        <li><a class="caption" href="#">Tasks</a></li>
+      </ul>
+    </nav>
+    <div class="reports-nav-btns">
+      <a class="global-list-left-btn" href="#">
+        <span class="icon--arrow-left"></span>
+      </a>
+    </div>
+  </main>
+</div>
+<script src="/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Productivity app</title>
+</head>
+<body>
+<div class="wrapper">
+  <header> <!--class="sticky"!-->
+    <h1 class="logo">
+      <a href=""></a>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a class="add-items" href="#" title="Add items">
+            <span class="icon--add"></span>
+          </a>
+        </li>
+        <li>
+          <a class="delete-items selected" href="#" title="Delete item">
+            <span class="icon--trash "></span>
+          </a>
+        </li>
+        <li>
+          <a class="global-list-nav" href="#" title="To global list">
+            <span class="icon--list"></span>
+          </a>
+        </li>
+        <li>
+          <a class="statistics-nav" href="#" title="To Statistics">
+            <span class="icon--statistics"></span>
+          </a>
+        </li>
+        <li>
+          <a class="settings-nav" href="#" title="To settings">
+            <span class="icon--settings"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="timer-page">
+    <h1 class="main-caption heading1">1. Creating a New Design</h1>
+    <h2 class="task-note subtitle">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </h2>
+    <div class="timer--start ">
+      <div class="tomatoes">
+        <span class="tomato"></span>
+        <span class="tomato fail"></span>
+        <span class="tomato fill"></span>
+        <a class="add-tomato" href="#" title="add-tomato">
+          <span class=" icon--add"></span>
+        </a>
+      </div>
+      <div class="timer">
+        <div class="clock-face">
+          <div class="clock-face-message">
+            Let's do it!
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="left-side half-circle"></div>
+          <div class="right-side half-circle"></div>
+        </div>
+      </div>
+      <div class="timer-nav-btns">
+        <button class="start">Start</button>
+        <a class="global-list-left-btn" href="#" title="To global list">
+          <span class="icon--arrow-left"></span>
+        </a>
+      </div>
+    </div>
+    <div class="timer--process none">
+      <div class="tomatoes">
+        <span class="tomato"></span>
+        <span class="tomato fail"></span>
+        <span class="tomato fill"></span>
+        <a class="add-tomato" href="#">
+          <span class=" icon--add"></span>
+        </a>
+      </div>
+      <div class="timer progress-25">
+        <div class="clock-face">
+          <div class="clock-face-message">
+            <div class="time">6</div>
+            <div class="val">min</div>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="left-side half-circle"></div>
+          <div class="right-side half-circle"></div>
+        </div>
+      </div>
+      <div class="timer-nav-btns">
+        <button class="fail-pomodora">
+          Fail Pomodora
+        </button>
+        <button class="finish-pomodora">
+          Finish Pomodora
+        </button>
+      </div>
+    </div>
+    <div class="timer--break none">
+      <div class="tomatoes">
+        <span class="tomato"></span>
+        <span class="tomato fail"></span>
+        <span class="tomato fill"></span>
+        <a class="add-tomato" href="#">
+          <span class=" icon--add"></span>
+        </a>
+      </div>
+      <div class="timer progress-100">
+        <div class="clock-face">
+          <div class="clock-face-message">
+            Break<br>is over
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="left-side half-circle"></div>
+          <div class="right-side half-circle"></div>
+        </div>
+      </div>
+      <div class="timer-nav-btns">
+        <button class="start-pomoodora">Start Pomodora</button>
+        <button class="finish-task">Finish Task.js</button>
+
+      </div>
+    </div>
+    <div class="timer--break-faild none">
+      <div class="tomatoes">
+        <span class="tomato"></span>
+        <span class="tomato fail"></span>
+        <span class="tomato fill"></span>
+        <a class="add-tomato" href="#">
+          <span class=" icon--add"></span>
+        </a>
+      </div>
+      <div class="timer progress-25">
+        <div class="clock-face">
+          <div class="clock-face-message">
+            <div class="break">break</div>
+            <div class="time">3</div>
+            <div class="val">min</div>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="left-side half-circle"></div>
+          <div class="right-side half-circle"></div>
+        </div>
+      </div>
+      <div class="timer-nav-btns">
+        <button class="start-pomoodora">Start Pomodora</button>
+      </div>
+    </div>
+    <div class="timer--comleted none">
+      <div class="tomatoes">
+        <span class="tomato"></span>
+        <span class="tomato fail"></span>
+        <span class="tomato fill"></span>
+        <a class="add-tomato" href="#" title="add-tomato">
+          <span class=" icon--add"></span>
+        </a>
+      </div>
+      <div class="timer progress-100">
+        <div class="clock-face">
+          <div class="clock-face-message">
+            You<br>Completed<br>Task.js
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="left-side half-circle"></div>
+          <div class="right-side half-circle"></div>
+        </div>
+      </div>
+      <div class="timer-nav-btns">
+        <a class="global-list-left-btn" href="#" title="To global list">
+          <span class="icon--arrow-left"></span>
+        </a>
+        <a class="to-report-right-btn" href="#" title="To reports">
+          <span class="icon--arrow-right"></span>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="/bundle.js"></script>
+</body>
+</html>

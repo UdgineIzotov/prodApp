@@ -1,0 +1,239 @@
+.category-task-list {
+  padding-top: 15px;
+  text-align: left;
+
+  .list-caption {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .list-caption-shape {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 1px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      left: -8px;
+      top: -8px;
+      height: 100%;
+      width: 100%;
+      padding: 3px;
+      border-radius: 50%;
+      border: 5px solid;
+    }
+  }
+
+  .tasks {
+    padding-top: 20px;
+
+    .category-strip {
+      left: -10px;
+    }
+
+    .actions {
+      float: right;
+      height: 100%;
+
+      .up-and-edit-wrap {
+        display: flex;
+        float: left;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-sizing: border-box;
+        margin-left: -40px;
+        height: 100%;
+      }
+
+      .up,
+      .edit {
+        font-size: 18px;
+        color: @Silver;
+        background: none;
+
+        &:hover, &:active {
+          color: @Nepal;
+        }
+      }
+
+      .edit {
+        position: static;
+        margin: 0;
+        transform: none;
+      }
+
+      .timer {
+        position: relative;
+        height: 100%;
+        width: 87px;
+        span {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          font-size: 28px;
+          font-family: 'PT Sans', sans-serif;
+          color: white;
+
+          &:before {
+            font-size: 44px;
+          }
+        }
+      }
+    }
+    .date {
+      text-align: center;
+      padding: 0 20px;
+
+      .day {
+        display: block;
+        font-size: 36px;
+      }
+
+      .month {
+        display: block;
+        margin: auto;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.priority-urgent {
+
+  .caption {
+    color: @prior-urgent;
+  }
+
+  .timer {
+    background-color: @prior-urgent;
+  }
+
+  .timer:active {
+    background-color: @prior-urgent-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+
+    .count {
+      display: none;
+    }
+  }
+}
+.priority-hight {
+
+  .caption {
+    color: @prior-hight;
+  }
+
+  .timer {
+    background-color: @prior-hight;
+  }
+
+  .timer:active {
+    background-color: @prior-hight-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+    .count {
+      display: none;
+    }
+  }
+}
+.priority-middle {
+  .caption {
+    color: @prior-middle;
+  }
+  .timer {
+    background-color: @prior-middle;
+  }
+  .timer:active {
+    background-color: @prior-middle-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+    .count {
+      display: none;
+    }
+  }
+}
+.priority-low {
+  .caption {
+    color: @prior-low;
+  }
+  .timer {
+    background-color: @prior-low;
+  }
+  .timer:active {
+    background-color: @prior-low-active;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "\e90e";
+    }
+    .count {
+      display: none;
+    }
+  }
+}
+
+.hobby-task {
+  .category-strip {
+    background-color: @categor-hobby;
+  }
+}
+.sport-task {
+  .category-strip {
+    background-color: @categor-sport;
+  }
+
+}
+.work-task {
+  .category-strip {
+    background-color: @categor-work;
+  }
+
+}
+.education-task {
+  .category-strip {
+    background-color: @categor-education;
+  }
+
+}
+.other-task {
+  .category-strip {
+    background-color: @categor-other;
+  }
+}
+
+.work-task-list {
+  .task-list-color("work");
+}
+.education-task-list {
+  .task-list-color("education");
+}
+.hobby-task-list {
+  .task-list-color("hobby");
+}
+.sport-task-list{
+  .task-list-color("sport");
+}
+.other-task-list{
+  .task-list-color("other");
+}

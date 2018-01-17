@@ -1,0 +1,94 @@
+.notify {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 10vh;
+  right: 5vw;
+  z-index: 40;
+  .size(400px, 50px);
+  box-shadow: 0px 0px 0px 1px white;
+  color: white;
+
+  border-radius: 5px;
+
+  .emoji-notify {
+    float: left;
+    .size(50px, 50px);
+    box-sizing: border-box;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 11px 0 0 11px;
+
+    &:after {
+      font-family: icomoon;
+      font-size: 24px;
+    }
+  }
+
+  .notify-msg {
+    flex-grow: 1;
+    vertical-align: middle;
+    padding-left: 10px;
+    .caption
+  }
+
+  .hide-btn {
+    float: right;
+    padding-top: 13px;
+    width: 35px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+}
+
+.notify-success {
+  background-color: @prior-low-active;
+
+  .emoji-notify {
+    background-color: @prior-low;
+
+    &:after {
+      content: "\e911";
+    }
+  }
+}
+
+.notify-error {
+  background-color: @prior-urgent-active;
+
+  .emoji-notify {
+    background-color: @prior-urgent;
+
+    &:after {
+      content: "\e90f";
+    }
+  }
+}
+
+.notify-warning {
+  background-color: @prior-hight-active;
+
+  .emoji-notify {
+    background-color: @prior-hight;
+
+    &:after {
+      content: "\e910";
+    }
+  }
+}
+
+.notify-info {
+  background-color: @Curious-Blue;
+
+  .emoji-notify {
+    background-color: @Malibu;
+
+    &:after {
+      content: "\e910";
+    }
+  }
+}

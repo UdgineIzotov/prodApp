@@ -1,0 +1,171 @@
+@import "../../components/global-task-list/global-task-list";
+@import "../../components/daily-task-list/daily-task-list";
+@import "../../components/modals/modals";
+
+.main-caption {
+  margin-bottom: 60px;
+}
+
+.pomadoro-img {
+  height: 160px;
+  width: 170px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+  margin-top: 105px;
+}
+
+.message {
+  margin: 73px 20%;
+  color: @Nepal;
+  font-weight: 100;
+}
+
+.task-nav-buttons {
+  .skip {
+    .link-btn;
+
+    padding: 13px 45px;
+
+    .blue-button();
+  }
+
+  .to-settings {
+    .link-btn;
+
+    margin-left: 15px;
+    padding: 13px 30px;
+
+    .green-button();
+  }
+}
+
+.main-content {
+  margin: 0 6.6%;
+}
+
+.categories-tasks {
+  position: relative;
+  padding-top: 46px;
+}
+
+.categories-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: 'PT Sans', sans-serif;
+
+  li {
+    margin-left: 5px;
+
+    &:after {
+      margin-left: 10px;
+      display: inline;
+      content: "|";
+      color: @Nepal;
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+}
+
+.drag-message {
+  padding-top: 65px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+
+  .msg {
+    font-size: 36px;
+    line-height: 45px;
+    color: @Nepal;
+  }
+  .drag-arrow {
+    display: block;
+    padding-top: 28px;
+    font-size: 60px;
+  }
+}
+
+.exelent-message {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  line-height: 44px;
+  padding-top: 95px;
+  padding-bottom: 30px;
+  font-weight: 100;
+  color: @Nepal;
+}
+
+.remove-item {
+  .tasks {
+    .category-strip {
+      width: 80px;
+      &:before {
+        display: block;
+        content: "\e914";
+        font-family: 'icomoon';
+        font-size: 40px;
+        color: white;
+        .vh-align();
+      }
+    }
+  }
+}
+
+.done {
+  background-color: @Silver !important;
+  .caption {
+    text-decoration: line-through;
+  }
+}
+
+.active-remove {
+  .category-strip {
+    &:before {
+      content: "\e906" !important;
+      font-family: 'icomoon';
+
+    }
+  }
+}
+
+.deadline-lost {
+  .date {
+    color: @prior-urgent !important;
+  }
+}
+
+.to-global-list {
+  display: block;
+  text-align: left;
+  margin: 35px 0;
+
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  color: @Nepal;
+
+  &:hover {
+    color: @Spray;
+    cursor: pointer;
+  }
+}
+
+.add-first-task {
+  .pomadoro-img {
+    background-image: url("../../../assets/images/tomato-add.svg");
+    cursor: pointer;
+  }
+}
+
+.no-any-tasks {
+  .pomadoro-img {
+    background-image: url("../../../assets/images/tomato-addv02.svg");
+  }
+}
+
+
+
+

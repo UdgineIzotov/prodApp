@@ -1,0 +1,145 @@
+.opacity (@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+  -moz-opacity: @opacity;
+  opacity: @opacity;
+}
+
+/**
+ *
+ * MIXINS FOR MEDIA QUERY
+ *
+ */
+
+.responsive(@maxWidth; @rules) {
+  @media only screen and (max-width: @maxWidth) {
+    @rules();
+  }
+}
+
+.responsive-landscape(@width; @rules) {
+  @media screen and (max-width: @width) and (orientation: landscape) {
+    @rules();
+  }
+}
+
+
+
+.message{
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  line-height: 46px;
+}
+.task-list-color(@category) {
+  @color: e("@{categor-@{category}}");
+
+  .list-caption {
+    color: @color;
+
+    .list-caption-shape {
+      background-color: @color;
+      &:after {
+        border-color: @color;
+      }
+    }
+  }
+  .tasks {
+    border-left: 10px solid @color;
+  }
+}
+
+.placeholder(@color, @font-weight){
+
+  &::-moz-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+  &::-webkit-input-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+  &:-moz-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+  &:-ms-input-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+}
+
+.user-select-none{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.clearfix () {
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.vh-align(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blue-button () {
+  background-color: @Malibu;
+
+  &:hover, &:focus{
+    background-color: @Curious-Blue;
+  }
+
+  &:active{
+    background-color: @Pelorous;
+  }
+}
+.green-button () {
+  background-color: @Mountain-Meadow;
+
+  &:hover, &:focus {
+    background-color: @Mountain-Meadow-Dark;
+  }
+  &:active {
+    background-color: @Deep-Sea;
+  }
+}
+.red-button () {
+  background-color: @Tomato;
+
+  &:hover, &:focus{
+    background-color: @Dark-Coral;
+  }
+  &:active{
+    background-color: @Mahogany;
+  }
+
+}
+
+
+.style-radio-btn (@color){
+  &:hover .checkmark{
+    background-color: @color;
+  }
+
+  input:checked{
+    & ~ .checkmark{
+      background-color: @color;
+    }
+  }
+
+
+}
+/***************
+**TIMER CIRCLE**
+****************/
+.size(@w, @h) {
+  height: @h;
+  width: @w;
+}
+.transition-time(@time) {
+  transition: @time * 60 + 's'
+}

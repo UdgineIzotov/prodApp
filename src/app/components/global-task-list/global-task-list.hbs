@@ -1,0 +1,33 @@
+<div class="category-task-list {{category}}-task-list">
+  <div class="list-caption">
+    <div class="list-caption-shape"></div>
+    {{category}}
+  </div>
+  <ul class="tasks">
+    {{#each tasks}}
+    <li class="task-item {{category}}-task priority-{{priority}}" data-id="{{id}}">
+      <div class="category-strip"></div>
+      <div class="date">
+        <div class="day">{{#getDay}}{{deadline}}{{/getDay}}</div>
+        <div class="month">{{#getMonth}}{{deadline}}{{/getMonth}}</div>
+      </div>
+      <div class="text">
+        <h3 class="caption">{{title}}</h3>
+        <h6 class="note">
+          {{description}}
+        </h6>
+      </div>
+      <div class="actions">
+        <div class="up-and-edit-wrap">
+          <button class="up" href="#" title="up the task" data-id="{{id}}"><span class="icon--arrows-up"></span></button>
+          <button class="edit" href="#" title="edit the task" data-id="{{id}}"><span class="icon--edit"></span></button>
+        </div>
+        <div class="timer" data-id="{{id}}" title="To timer">
+          <span class="icon--tomato"></span>
+          <span class="count">{{estimationTotal}}</span>
+        </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
