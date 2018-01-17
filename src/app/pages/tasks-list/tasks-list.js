@@ -161,8 +161,11 @@ class TaskListView {
      */
     renderGlobalList (tasks) {
         let globalInnerHtml = '';
+
         tasks.forEach((list) => {
-            globalInnerHtml += GlobalTaskList.render(list);
+            if (list.tasks.length) {
+                globalInnerHtml += GlobalTaskList.render(list);
+            }
         });
 
         const listNode = document.querySelector('#global-lists');
