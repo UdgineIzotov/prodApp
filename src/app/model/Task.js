@@ -14,6 +14,7 @@ export class Task {
         estimationSucced,
         estimationFailed
     ) {
+        console.dir(arguments);
         this.id = id;
         this.title = title;
         this.description = description;
@@ -24,6 +25,7 @@ export class Task {
         this.priority = priority;
 
         this.deadline = new Date(deadline);
+        console.log('creating a task:', deadline, this.deadline);
         this.isDone = false;
     }
 }

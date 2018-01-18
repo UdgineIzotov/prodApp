@@ -151,6 +151,10 @@ class TaskListView {
         }
 
         const dailyContainer = document.querySelector('.daily-tasks');
+        dailyContainer.innerHTML = '';
+
+        console.log('daily task list cleared');
+
         dailyContainer.innerHTML = DailyTaskList.render({ tasks });
         $(dailyContainer).tooltip();
     }

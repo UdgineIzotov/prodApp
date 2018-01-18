@@ -45,15 +45,16 @@ class DataStorageInstanse {
    * @param {object} task
    */
     setTask (task) {
-    /* istanbul ignore next:tests with another test */
+        console.log('setTask:', task.title);
+        /* istanbul ignore next:tests with another test */
         const newTask = new Task(
             (new Date()).getTime(),
             task.title,
             task.description,
-            task.estimationTotal,
             task.category,
             task.priority,
-            task.deadline
+            task.deadline,
+            task.estimationTotal
         );
 
         /* istanbul ignore next:simple operation */
@@ -71,9 +72,10 @@ class DataStorageInstanse {
    */
     updateTask (task) {
     /* istanbul ignore next */
+        console.log('updating task :', task);
 
         /* istanbul ignore next */
-        const taskToUpdate = DataStorage.tasks.filter(task => task.id === +task.id)[0];
+        const taskToUpdate = DataStorage.tasks.filter(item => item.id.toString() === task.id.toString())[0];
 
         /* istanbul ignore next */
         taskToUpdate.title = task.title;
@@ -113,8 +115,16 @@ class DataStorageInstanse {
    */
     getDailyTasks () {
         console.log('/******** GET DAILY TASKS ********/');
-        const tasks = DataStorage.tasks.filter(task => isDaily(task) && !task.isDone);
+
+        const tasks = DataStorage.tasks.filter((task) => {
+            const Daily = isDaily(task);
+            const Done = !task.isDone;
+            console.log(task.id, Daily, Done);
+            return Daily && Done;
+        });
+
         console.dir(tasks);
+        console.dir(DataStorage.tasks);
         if (tasks.length === 0) {
             PubSub.publish('TaskListPage/NoDailyTasks');
             return;
@@ -178,6 +188,9 @@ class DataStorageInstanse {
         console.dir(task);
 
         DataStorage.updateTask(task);
+
+        PubSub.publish('render/Notification', { type: 'success', message: 'Task has been updated!' });
+        PubSub.publish('model/TasksUpdated');
     }
 
     /**
@@ -250,11 +263,7 @@ export function getSortedByCategory (categories, tasks) {
 
 export function isDaily (task) {
     const nowDate = new Date();
-    const deadline = task.deadline;
-
-    console.log('/** TIME IS DAILY **/');
-    console.dir(nowDate);
-    console.dir(deadline);
+    const deadline = new Date(task.deadline);
 
     return deadline.getFullYear() === nowDate.getFullYear() &&
     deadline.getMonth() === nowDate.getMonth() &&

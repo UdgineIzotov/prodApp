@@ -43,6 +43,7 @@
     "no-shadow": "off",
     "no-case-declarations": "off",
     "no-void": "off",
+    "prefer-rest-params": "off",
 
     // General
     "linebreak-style": 0
