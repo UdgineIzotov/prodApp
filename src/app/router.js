@@ -2,10 +2,20 @@
  * @module Router
  */
 /** app router */
-export const Router = {
-    routes: [],
-    root: '/',
-    defaultRoute: '',
+class RouterCreator {
+    constructor () {
+        this.routes = [];
+        this.root = '/';
+        this.defaultRoute = '';
+
+        console.log('ping router', this);
+        window.onload = (function () {
+            if (sessionStorage.getItem('isNewUser')) {
+                const fragment = this.getFragment();
+                this.check(fragment);
+            }
+        }).bind(this);
+    }
 
     /**
      * gets current location
@@ -18,7 +28,7 @@ export const Router = {
         fragment = match ? match[1] : '';
 
         return this.clearSlashes(fragment);
-    },
+    }
 
     /**
      * parses url to proper value
@@ -28,7 +38,7 @@ export const Router = {
     */
     clearSlashes (path) {
         return path.toString().replace(/\/$/, '').replace(/^\//, '');
-    },
+    }
 
     /**
      * inits router data with routes
@@ -38,7 +48,7 @@ export const Router = {
      */
     init (data) {
         this.routes = data;
-    },
+    }
 
     /**
      * add new route to router data
@@ -50,7 +60,7 @@ export const Router = {
     add (re, handler) {
         this.routes.push({ re, handler });
         return this;
-    },
+    }
     /**
      * calls handler on routing
      * @member check
@@ -77,7 +87,7 @@ export const Router = {
             this.navigate(this.defaultRoute.re);
         }
         return this;
-    },
+    }
 
     /**
      * handles location change
@@ -87,6 +97,8 @@ export const Router = {
     listen () {
         const self = this;
         let current = self.getFragment();
+
+        console.dir(current);
 
         const fn = function () {
             if (current !== self.getFragment()) {
@@ -98,7 +110,7 @@ export const Router = {
         clearInterval(this.interval);
         this.interval = setInterval(fn, 50);
         return this;
-    },
+    }
 
     /**
      * navigates to specific url
@@ -113,5 +125,7 @@ export const Router = {
 
         return this;
     }
-};
+}
+
+export const Router = new RouterCreator();
 

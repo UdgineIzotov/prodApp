@@ -19,12 +19,11 @@ class FireBase {
     }
     /**
      * set a task to firebase
-     * @param {String} taskId
      * @param {object} task
      */
-    setTask (taskId, task) {
+    setTask (task) {
         const updates = {};
-        updates[`/tasks/${taskId}`] = task;
+        updates[`/tasks/${task.id}`] = task;
 
         this.db.ref().update(updates);
     }
@@ -33,7 +32,10 @@ class FireBase {
      * @param {String} taskId
      */
     deleteTask (taskId) {
-        this.db.ref().child(`/tasks/${taskId}`).remove();
+        console.log(taskId);
+        const temp = this.db.ref().child(`/tasks/${taskId}`);
+        temp.remove();
+        console.log(temp);
     }
     /**
      * gets all tasks in the firebase

@@ -10,13 +10,12 @@ class TimerModelCreator {
         this.settings = null;
     }
 
-    /**
+    /**r
      * calculater if it is long break or not
      * @returns {bool} - true on Long Break
      */
     isLongBreak () {
         const iterationsCount = parseInt(sessionStorage.getItem('pomodoroIterations'), 10) || 1;
-
 
         if (iterationsCount % this.getIterationsCount() === 0) {
             return true;

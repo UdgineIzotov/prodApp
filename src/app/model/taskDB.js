@@ -24,7 +24,16 @@ class DataStorageInstanse {
         const tasks = [];
 
         fireDataBase.getTasks().then((data) => {
-            data.forEach(task => tasks.push(task));
+            data.forEach(task => tasks.push(new Task(
+                task.id,
+                task.title,
+                task.description,
+                task.category,
+                task.priority,
+                task.deadline,
+                task.estimationTotal,
+                task.estimationSucced
+            )));
 
             DataStorage.tasks = tasks;
             PubSub.publish('model/requestTasksDataFinish', tasks.length);
@@ -38,18 +47,17 @@ class DataStorageInstanse {
     setTask (task) {
     /* istanbul ignore next:tests with another test */
         const newTask = new Task(
+            (new Date()).getTime(),
             task.title,
             task.description,
             task.estimationTotal,
             task.category,
             task.priority,
-            new Date(task.deadline)
+            task.deadline
         );
 
         /* istanbul ignore next:simple operation */
-        const taskId = newTask.id;
-
-        fireDataBase.setTask(taskId, newTask);
+        fireDataBase.setTask(newTask);
 
         /* istanbul ignore next:simple operation */
         DataStorage.tasks.push(newTask);
@@ -63,7 +71,6 @@ class DataStorageInstanse {
    */
     updateTask (task) {
     /* istanbul ignore next */
-        const taskId = task.id;
 
         /* istanbul ignore next */
         const taskToUpdate = DataStorage.tasks.filter(task => task.id === +task.id)[0];
@@ -81,7 +88,7 @@ class DataStorageInstanse {
         /* istanbul ignore next */
         taskToUpdate.deadline = new Date(task.deadline);
 
-        fireDataBase.setTask(taskId, taskToUpdate);
+        fireDataBase.setTask(taskToUpdate);
 
         PubSub.publish('render/Notification', { type: 'success', message: 'Task has been updated!' });
         PubSub.publish('model/TasksUpdated');
@@ -105,14 +112,16 @@ class DataStorageInstanse {
    * notify with DailyTasks array
    */
     getDailyTasks () {
+        console.log('/******** GET DAILY TASKS ********/');
         const tasks = DataStorage.tasks.filter(task => isDaily(task) && !task.isDone);
-
+        console.dir(tasks);
         if (tasks.length === 0) {
             PubSub.publish('TaskListPage/NoDailyTasks');
             return;
         }
 
         PubSub.publish('TaskListPage/DailyTaskListRender', tasks);
+        console.log('/******** ENDING GET DAILY TASKS ********/');
     }
 
     /**
@@ -139,15 +148,16 @@ class DataStorageInstanse {
    * @param {array} ids - tasks ids to be deleted
    */
     deleteTasksById (ids) {
+        console.dir('ping');
         const tasksDeleteFromFire = [];
 
         DataStorage.tasks = DataStorage.tasks.filter((task) => {
             if (ids.indexOf(task.id.toString()) !== -1) {
                 tasksDeleteFromFire.push(task);
-                return true;
+                return false;
             }
 
-            return false;
+            return true;
         });
 
         tasksDeleteFromFire.forEach(task => DataStorage.deleteTask(task.id));
@@ -164,6 +174,8 @@ class DataStorageInstanse {
         const task = DataStorage.tasks.filter(task => task.id === +id)[0];
 
         task.deadline = new Date();
+
+        console.dir(task);
 
         DataStorage.updateTask(task);
     }
@@ -238,7 +250,11 @@ export function getSortedByCategory (categories, tasks) {
 
 export function isDaily (task) {
     const nowDate = new Date();
-    const deadline = new Date(task.deadline);
+    const deadline = task.deadline;
+
+    console.log('/** TIME IS DAILY **/');
+    console.dir(nowDate);
+    console.dir(deadline);
 
     return deadline.getFullYear() === nowDate.getFullYear() &&
     deadline.getMonth() === nowDate.getMonth() &&

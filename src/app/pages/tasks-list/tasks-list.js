@@ -263,6 +263,7 @@ function hideModal () {
 }
 
 function editTaskClick () {
+    console.log('ping');
     const title = document.querySelector('.edit-task-form #title').value;
     const description = document.querySelector('.edit-task-form #description').value;
     const category = document.querySelector('.edit-task-form [name="category"]:checked').value;
